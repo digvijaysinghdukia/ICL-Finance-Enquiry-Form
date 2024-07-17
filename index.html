@@ -6,15 +6,20 @@
     <title>ICL Finance Enquiry Form</title>
     <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
-
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-contener">
-                <div> Call +918302160041</div>
+                <div>Call <a style="text-decoration: none;" href="tel:+4733378901"> +97597363238</a>  </div>
                 <div>FAQ</div>
-                <label class="ui-switch" onclick="toggleColor()">
+                <label class="ui-switch" onclick="toggleColor()" style="display: none;">
                     <input type="checkbox">
                     <div class="slider">
                     <div class="circle"></div>
@@ -51,7 +56,7 @@
     <main>
         <h3>New Customer</h3>
         <div class="from-contener">
-            <div class="icon-contner">
+            <!-- <div class="icon-contner">
                 <div class="icon">
                     <svg width="62" height="49" viewBox="0 0 62 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.45207 42.2861L4.10963 42.1149C3.93842 42.0293 3.7672 42.0293 3.68159 42.1149L3.33916 42.3717C2.91112 42.6285 2.6543 43.1422 2.6543 43.6558V45.0256C2.6543 45.2824 2.82551 45.4536 3.08234 45.4536H4.7945C5.05132 45.4536 5.22254 45.2824 5.22254 45.0256V43.6558C5.13693 43.0566 4.88011 42.5429 4.45207 42.2861ZM4.28085 44.5975H3.42477V43.6558C3.42477 43.399 3.51038 43.2278 3.7672 43.0566L3.85281 42.971L3.93842 43.0566C4.10963 43.2278 4.28085 43.399 4.28085 43.6558V44.5975Z" fill="#BFBFBF"/>
@@ -231,7 +236,7 @@
                     <span>Pune</span>
                 </div>
                 
-            </div>
+            </div> -->
             <form>
                 <div class="inputGroup">
                     <input type="text" required="" autocomplete="off">
@@ -245,14 +250,20 @@
                     <select name="cars" id="cars" form="carform">
                         <option value="">--Type of Loan--</option>
                         <option value="Home Loan">Home Loan</option>
+                        <option value="Personal Loan">Personal Loan</option>
                         <option value="Loan Against Property">Loan Against Property</option>
-                        
+                        <option value="Business Loan">Business Loan</option>
+                        <option value="Gold Loan">Gold Loan</option>
+                        <option value="Education Loan">Education Loan</option>
+                        <option value="Auto Loan">Auto Loan</option>
+                        <option value="Mortgage Loan">Mortgage Loan</option>
+                        <option value="Credit Card">Credit Card</option>
                       </select>
                 </div> 
-                <div class="inputGroup">
+                <!-- <div class="inputGroup">
                     <input type="text" required="" autocomplete="off">
                     <label for="name">Emaill ID</label>
-                </div> 
+                </div>  -->
                 <div class="inputGroup">
                     <input type="text" required="" autocomplete="off">
                     <label for="name">Mobile Number*</label>
@@ -276,7 +287,7 @@
         </div>
     </main>
     <footer>
-        Legal Disclaimer | Privacy Commitment | Fraud Advisory<br>
+        <a href="./Legal Disclaimer.html"> Legal Disclaimer</a> | <a href="./Privacy Commitment.html"> Privacy Commitment</a> | <a href="./Fraud Advisory.html"> Fraud Advisory </a><br>
         Copyright © 2024 Infinity Corporation
     </footer>
     
