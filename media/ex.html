@@ -1,0 +1,54 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Background</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#toggleButton {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#backgroundDiv {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+}
+
+.bg-image {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-color {
+    background-color: lightblue;
+}
+
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Toggle Background</button>
+    <div id="backgroundDiv" class="bg-image"></div>
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            const backgroundDiv = document.getElementById('backgroundDiv');
+            backgroundDiv.classList.toggle('bg-image');
+            backgroundDiv.classList.toggle('bg-color');
+        });
+
+    </script>
+</body>
+</html>     
