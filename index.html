@@ -12,12 +12,18 @@
             color: black;
         }
     </style>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("lM1NPA2RfQuvX4K1X");
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-contener">
-                <div>Call <a style="text-decoration: none;" href="tel:+917597363238"> +917597363238</a>  </div>
+                <div>Call <a style="text-decoration: none;" href="tel:+4733378901"> +97597363238</a>  </div>
                 <div>FAQ</div>
                 <label class="ui-switch" onclick="toggleColor()" style="display: none;">
                     <input type="checkbox">
@@ -35,7 +41,7 @@
     </header>
     <section id="section">
         <div class="left">
-            <h3>Your Loan<br>
+            <h3>Your Home Loan<br>
                 is just a few steps away!
             </h3>
             <ul>
@@ -237,17 +243,17 @@
                 </div>
                 
             </div> -->
-            <form>
+            <form id="loanForm">
                 <div class="inputGroup">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Full Name*</label>
+                    <input type="text" required="" autocomplete="off" id="fullName">
+                    <label for="fullName">Full Name*</label>
                 </div>
                 <div class="inputGroup">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">City Of Residence*</label>
-                </div>  
+                    <input type="text" required="" autocomplete="off" id="cityOfResidence">
+                    <label for="cityOfResidence">City Of Residence*</label>
+                </div>
                 <div class="inputGroup">
-                    <select name="cars" id="cars" form="carform">
+                    <select name="cars" id="loanType" form="loanForm">
                         <option value="">--Type of Loan--</option>
                         <option value="Home Loan">Home Loan</option>
                         <option value="Personal Loan">Personal Loan</option>
@@ -258,22 +264,35 @@
                         <option value="Auto Loan">Auto Loan</option>
                         <option value="Mortgage Loan">Mortgage Loan</option>
                         <option value="Credit Card">Credit Card</option>
-                      </select>
-                </div> 
-                <!-- <div class="inputGroup">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Emaill ID</label>
-                </div>  -->
+                    </select>
+                </div>
                 <div class="inputGroup">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Mobile Number*</label>
-                </div> 
+                    <input type="text" required="" autocomplete="off" id="mobileNumber">
+                    <label for="mobileNumber">Mobile Number*</label>
+                </div>
                 <div class="inputGroup">
-                    <input id="submit" type="submit"  autocomplete="off" value="Submit">
-                    
-                </div> 
-    
+                    <input id="submit" type="submit" autocomplete="off" value="Submit">
+                </div>                
             </form>
+            <script type="text/javascript">
+                document.getElementById('loanForm').addEventListener('submit', function(event) {
+                   event.preventDefault();
+             
+                   emailjs.send('service_bjpzb8w', 'template_23l633e', {
+                       fullName: document.getElementById('fullName').value,
+                       cityOfResidence: document.getElementById('cityOfResidence').value,
+                       loanType: document.getElementById('loanType').value,
+                       mobileNumber: document.getElementById('mobileNumber').value
+                   })
+                   .then(function(response) {
+                       console.log('SUCCESS!', response.status, response.text);
+                       alert('Form submitted successfully!');
+                   }, function(error) {
+                       console.log('FAILED...', error);
+                       alert('Form submission failed. Please try again.');
+                   });
+                });
+             </script>             
             <div class="note">
                 <p>By clicking on submit, you agree to our <a href="#">Terms & Conditions</a></p>
                 <p>
